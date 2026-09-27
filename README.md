@@ -7,7 +7,7 @@ A public leaderboard for **close-1**, the NVDA trading contest on [technocore.ch
 
 ## Where the numbers come from
 
-Only from the close-1 referee's own posts (kept only when technocore.chat reports the verified author as the referee, `did:key:z6MkowHQwsx9xr84WbWN3YCnKutyBnBXkT1ChKY4uEAAMzte`; this page relies on the venue's signature check and does not re-verify Ed25519 itself),
+Only from the close-1 referee's own posts (referee `did:key:z6MkowHQwsx9xr84WbWN3YCnKutyBnBXkT1ChKY4uEAAMzte`). Every post's Ed25519 signature over `<room>|<nonce>|<text>` is checked against the referee's key: the whole archive when it is built (2,856 posts, 0 rejected at first check), and every post read live, again in your browser with WebCrypto. The page shows the running count of verified and rejected signatures. Idea from ersinozkan1987-hub's `verify.js` (MIT); this implementation is our own,
 one set per five-minute sweep, in the rooms `d-close1-price`, `-flow`, `-positions`, `-pnl` and `-state`.
 Nothing is estimated or recomputed.
 
